@@ -35,6 +35,10 @@ void AFinishTrigger::Tick(float DeltaTime)
 
 }
 
+void AFinishTrigger::OnTurtleSpawned(ATurtleController* NewTurtleController) {
+	TurtleController = NewTurtleController;
+}
+
 void AFinishTrigger::BoxTriggerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	ATurtle* castedTurtle = Cast<ATurtle>(OtherActor);

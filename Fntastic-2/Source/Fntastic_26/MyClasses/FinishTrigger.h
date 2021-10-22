@@ -36,6 +36,10 @@ public:
 	// Вешается на событие пересечения коллизии финиша
 		void BoxTriggerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+	UFUNCTION(BlueprintCallable)
+		// Вызывается из гнезда. Передаёт контроллер заспавненной черепашки
+		void OnTurtleSpawned(ATurtleController* NewTurtleController);
+
 	// PROPERTIES
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
@@ -49,6 +53,10 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 		// Текст на стене
 		ATextRenderActor* FinishText;
+
+	UPROPERTY(BlueprintReadWrite, VisibleDefaultsOnly)
+		// Контроллер черепашки, вышедшей из гнезда
+		ATurtleController* TurtleController;
 
 	// Звуки и частицы финиша
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Effects|Sound")

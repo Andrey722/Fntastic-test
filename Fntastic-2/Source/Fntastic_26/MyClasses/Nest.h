@@ -11,6 +11,7 @@
 
 #include "TurtleController.h"
 #include "Turtle.h"
+#include "FinishTrigger.h"
 
 #include "Nest.generated.h"
 
@@ -44,6 +45,10 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 		// Класс черепашки, которую нужно заспавнить в этом гнезде
 		TSubclassOf<ATurtle> TurtleClass;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		// Объект финиша, к которому должна идти черепашка
+		AFinishTrigger* FinishLine;
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 		// Моделька гнезда (просто плейн)

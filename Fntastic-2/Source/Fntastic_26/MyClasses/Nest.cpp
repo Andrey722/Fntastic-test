@@ -2,6 +2,8 @@
 
 
 #include "../MyClasses/Nest.h"
+#include "TimerManager.h"
+#include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
 ANest::ANest()
@@ -45,7 +47,10 @@ void ANest::Tick(float DeltaTime)
 //		Sparks->BeginTrails(FName(), FName(), ETrailWidthMode::ETrailWidthMode_FromCentre, 0.0f);
 //		FTimerHandle h;
 //		GetWorld()->GetTimerManager().SetTimer(h, this, &ANest::StopSpawnVisual, 4.0f, false);
-//		return Cast<ATurtleController>(turtle->GetController());
+//		ATurtleController* castedController = Cast<ATurtleController>(turtle->GetController());
+//		FinishLine->OnTurtleSpawned(castedController);
+//		turtle->SetActorRotation(UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), FinishLine->GetActorLocation()));
+//		return castedController;
 //	}
 //
 //	return NULL;
